@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#010101"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/top_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="InvalidId" >
+
+                <ImageButton
+                    android:id="@+id/back_Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="#010101"
+                    android:src="@drawable/ic_arrow_back_ios"
+                    android:paddingLeft="15dp"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageButton
+                    android:id="@+id/more_info_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:backgroundTint="#010101"
+                    android:src="@drawable/ic_more_horiz"
+                    android:layout_margin="5dp"
+                    tools:ignore="MissingConstraints" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <FrameLayout
+                android:id="@+id/profile_picture_container"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/top_layout"
+                android:layout_marginTop="15dp">
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/profile_picture"
+                    android:background="@drawable/rounded_outline"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:padding="2dp"
+                    android:layout_gravity="end"
+                    android:id="@+id/verified_user"
+                    android:src="@drawable/ic_verify_user"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/rounded_outline"
+                    tools:ignore="MissingConstraints" />
+
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/profile_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/profile_name"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                app:layout_constraintTop_toBottomOf="@id/profile_picture_container"
+                />
+
+            <TextView
+                android:id="@+id/profile_email_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/profile_email_id"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:gravity="center"
+                android:paddingTop="7dp"
+                android:paddingBottom="5dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                app:layout_constraintTop_toBottomOf="@id/profile_name"
+                />
+
+            <TextView
+                android:id="@+id/profile_bio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Wonder Women \n @pilotwavemotionpictures"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="8dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                app:layout_constraintTop_toBottomOf="@id/profile_email_id"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:orientation="horizontal"
+                android:weightSum="4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/profile_details_copntainer"
+                app:layout_constraintTop_toBottomOf="@id/profile_bio"
+                android:paddingTop="5dp"
+                tools:ignore="MissingConstraints">
+
+                <LinearLayout
+                    android:id="@+id/followers_container"
+                    android:layout_width="0dp"
+                    app:layout_constraintHorizontal_weight="1"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:gravity="center"
+                    app:layout_constraintRight_toLeftOf="@id/following_container"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#4CAF50"
+                            android:text="10.4M"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="4dp"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:text="Followers"
+                            android:paddingBottom="4dp"
+                            android:textSize="14sp"
+                            />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginBottom="9dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/green_separator"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/following_container"
+                    android:layout_width="0dp"
+                    app:layout_constraintHorizontal_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    app:layout_constraintRight_toLeftOf="@id/views_container"
+                    app:layout_constraintLeft_toRightOf="@id/followers_container"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#4CAF50"
+                            android:text="10"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="4dp"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:text="Followings"
+                            android:paddingBottom="4dp"
+                            android:textSize="14sp"
+                            />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginBottom="9dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/green_separator"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/views_container"
+                    android:layout_width="0dp"
+                    app:layout_constraintHorizontal_weight="1"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toRightOf="@id/following_container"
+                    app:layout_constraintRight_toLeftOf="@id/likes_container"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#4CAF50"
+                            android:text="15.4M"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="4dp"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:text="Views"
+                            android:paddingBottom="4dp"
+                            android:textSize="14sp"
+                            />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginBottom="9dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/green_separator"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/likes_container"
+                    android:layout_width="0dp"
+                    app:layout_constraintHorizontal_weight="1"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toRightOf="@id/views_container"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="#4CAF50"
+                        android:text="10.4M"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="4dp"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/white"
+                        android:text="Likes"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="4dp"
+                        android:textSize="14sp"
+                        />
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/follow_button_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="5dp"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/profile_details_copntainer">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="150dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/bg_green_button"
+                    android:text="@string/follow"
+                    android:textColor="@color/black"
+                    android:backgroundTint="#4CAF50"
+                    android:layout_marginRight="8dp"/>
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/bg_green_button"
+                    android:backgroundTint="#4CAF50"
+                    android:layout_gravity="center"
+                    android:padding="3dp"
+                    android:src="@drawable/ic_follow"
+                    android:layout_marginRight="8dp"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/profile_video_like_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/follow_button_container"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                tools:ignore="MissingConstraints">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#43E1BBBB"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"/>
+
+                <LinearLayout
+                    android:id="@+id/video_container"
+                    android:layout_width="0dp"
+                    app:layout_constraintHorizontal_weight="1"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/like_container"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:onClick="onVideoClick"
+                    android:clickable="true"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/ic_video"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_videocam_green"/>
+
+                        <TextView
+                            android:id="@+id/video_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:paddingLeft="8dp"
+                            android:text="Followers"
+                            android:paddingBottom="4dp"
+                            android:textSize="14sp"
+                            />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginBottom="9dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/green_separator"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/like_container"
+                    android:layout_width="0dp"
+                    app:layout_constraintHorizontal_weight="1"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toRightOf="@id/video_container"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/video_container"
+                    app:layout_constraintTop_toTopOf="@id/video_container"
+                    android:gravity="center"
+                    android:onClick="onLikeClick"
+                    android:clickable="true"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/ic_like"
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_love_green"/>
+
+                        <TextView
+                            android:id="@+id/like_Content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:paddingLeft="8dp"
+                            android:text="Liked"
+                            android:paddingBottom="4dp"
+                            android:textSize="14sp"
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#43E1BBBB"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    app:layout_constraintTop_toBottomOf="@id/video_container"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/profile_post_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/profile_video_like_container"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
